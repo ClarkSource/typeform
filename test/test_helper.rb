@@ -1,7 +1,9 @@
-require './lib/typeform'
-require 'minitest/autorun'
-require 'webmock/minitest'
-require 'vcr'
+# frozen_string_literal: true
+
+require "./lib/typeform"
+require "minitest/autorun"
+require "webmock/minitest"
+require "vcr"
 
 VCR.configure do |c|
   c.filter_sensitive_data("<TYPEFORM_API_KEY>") { Typeform::Typeform.api_key }

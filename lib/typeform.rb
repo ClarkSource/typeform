@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "httparty"
 require "hashie"
 Hash.send :include, Hashie::Extensions
@@ -39,16 +41,16 @@ module Typeform
 
     @@base_uri = "https://api.typeform.com/v1/"
     @@api_key = ""
-    headers({
-      'User-Agent' => "typeform-rest-#{VERSION}",
-      'Content-Type' => 'application/json; charset=utf-8',
-      'Accept-Encoding' => 'gzip, deflate'
-    })
-    self.base_uri @@base_uri
+    headers("User-Agent"      => "typeform-rest-#{VERSION}",
+            "Content-Type"    => "application/json; charset=utf-8",
+            "Accept-Encoding" => "gzip, deflate")
+    base_uri @@base_uri
 
     class << self
       # Get the API key (Typeform::Typeform.api_key)
-      def api_key; @@api_key end
+      def api_key
+        @@api_key
+      end
 
       # Set the API key
       def api_key=(api_key)
@@ -56,7 +58,9 @@ module Typeform
         @@api_key = api_key
       end
 
-      def get(*args); handle_response super end
+      def get(*args)
+        handle_response super
+      end
       # No POST, PUT or DELETE for now - Read only Typeform API
       # def post(*args); handle_response super end
       # def put(*args); handle_response super end

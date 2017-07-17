@@ -1,8 +1,9 @@
-require 'typeform'
-require 'json'
+# frozen_string_literal: true
+
+require "typeform"
+require "json"
 
 module Typeform
-
   class Form
     attr_reader :form_id
 
@@ -15,26 +16,26 @@ module Typeform
       Hashie::Mash.new(response)
     end
 
-    def complete_entries(params = {})
+    def complete_entries(params={})
       response = get(params.merge(completed: true))
       Hashie::Mash.new(response)
     end
 
-    def incomplete_entries(params = {})
+    def incomplete_entries(params={})
       response = get(params.merge(completed: false))
       Hashie::Mash.new(response)
     end
 
     private
-      def get(params = nil)
-        params ||= {}
-        params[:key] = Typeform.api_key
-        Typeform.get uri, :query => params
-      end
 
-      def uri
-        "/form/#{form_id}"
-      end
+    def get(params=nil)
+      params ||= {}
+      params[:key] = Typeform.api_key
+      Typeform.get uri, query: params
+    end
+
+    def uri
+      "/form/#{form_id}"
+    end
   end
-
 end
