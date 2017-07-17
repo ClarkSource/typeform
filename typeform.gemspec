@@ -19,15 +19,14 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
   
-  spec.required_ruby_version     = ">= 1.9.2"
-  spec.required_rubygems_version = ">= 1.3.5"
-
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.required_ruby_version = ">= 2.1.0"
+  
+  spec.add_development_dependency "bundler", "~> 1.15.2"
+  spec.add_development_dependency "rake",    "~> 12.0"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
-  spec.add_runtime_dependency     "hashie", "~> 3.0.0"
+  spec.add_runtime_dependency     "hashie"
   spec.add_runtime_dependency     "httparty"
   spec.add_runtime_dependency     "json"
 end
