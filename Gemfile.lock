@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    typeform (0.0.2)
+    typeform (0.0.4)
       hashie (>= 3.0.0, < 4.0.0)
       httparty
       json
