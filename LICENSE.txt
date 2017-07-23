@@ -1,3 +1,5 @@
+Copyright (c) 2014 Philip De Smedt
+
 MIT License
 
 Copyright (c) 2017 Clark Germany GmbH
