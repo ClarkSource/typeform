@@ -17,7 +17,6 @@ final name = "typeform"
      }
     }
   }
-}
 
 
 
