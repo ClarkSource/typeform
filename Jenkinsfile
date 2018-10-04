@@ -7,15 +7,16 @@ node('ruby') {
       final scmVars = checkout scm
       sh 'ls -lash'
       sh 'ls -R'
-      sh 'cd ..'
-      sh 'ls -R'
       sh 'cd ${WORKSPACE}'
-      sh 'bundle install  --path vendor/bundle'
     }
+
+
   }
 
   stage('wait'){
-    sh 'sleep 60'
+    sh 'ls -R'
+    sh 'ls -lash'
+
   }
 }
 
