@@ -5,6 +5,7 @@ node('ruby') {
   cache(caches: [[$class: 'ArbitraryFileCache', excludes: '', includes: '**/*', path: '${WORKSPACE}/vendor/bundle']], maxCacheSize: 9999) {
     stage('ruby build') {
       final scmVars = checkout scm
+      sh 'ls -lash'
       sh 'bundle install  --path vendor/bundle'
     }
   }
